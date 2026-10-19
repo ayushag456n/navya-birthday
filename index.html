@@ -1,0 +1,227 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#ffedf4">
+<title>For Navya ♡ — Your Birthday Magic</title>
+<style>
+:root{--pink:#ff6fae;--rose:#ff477e;--cream:#fff8ef;--ink:#63364e;--lilac:#d8c5ff}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:linear-gradient(160deg,#fff1f6,#fff9ef 45%,#f8efff);color:var(--ink);font-family:ui-rounded,"Trebuchet MS",system-ui,sans-serif;overflow-x:hidden;cursor:none}
+a,button,input,label,textarea{cursor:none}
+#heartCursor{position:fixed;z-index:9999;pointer-events:none;font-size:22px;transform:translate(-50%,-50%);filter:drop-shadow(0 2px 4px #ff8db4);display:none}
+button,.btn{border:0;border-radius:999px;padding:12px 20px;background:linear-gradient(135deg,#ff76ae,#ff4f89);color:white;font-weight:800;box-shadow:0 8px 20px #ff6fae38;transition:.2s;display:inline-block;text-decoration:none}
+button:hover,.btn:hover{transform:translateY(-2px) scale(1.03)}
+button:focus-visible,a:focus-visible,input:focus-visible{outline:3px solid #9d76ff;outline-offset:4px}
+section{padding:68px 18px;max-width:1100px;margin:auto}
+.hero{min-height:96vh;display:flex;align-items:center;justify-content:center;text-align:center;position:relative;padding:40px 18px;overflow:hidden}
+.hero-inner{max-width:800px;position:relative;z-index:2}
+.eyebrow{letter-spacing:.15em;text-transform:uppercase;font-size:.75rem;font-weight:900;color:#d94d87}
+h1{font-size:clamp(2.8rem,9vw,6.3rem);line-height:.98;margin:16px 0;color:#d84280;letter-spacing:-.055em}
+h2{font-size:clamp(2rem,5vw,3.2rem);line-height:1.05;margin:0 0 18px;color:#d84280}
+h3{margin:.4rem 0;color:#b83d75}
+p{line-height:1.7}
+.subtitle{font-size:clamp(1rem,2.5vw,1.3rem);max-width:610px;margin:20px auto 26px}
+.pill{display:inline-block;background:#fff;border:1px solid #ffd4e5;padding:8px 14px;border-radius:999px;font-size:.9rem;margin:5px}
+.hero-buttons{display:flex;justify-content:center;gap:10px;flex-wrap:wrap}
+.soft-btn{background:#fff;color:#ce477d;border:1px solid #ffd0e2}
+.floaty{position:absolute;animation:float 5s ease-in-out infinite;user-select:none;pointer-events:none}
+@keyframes float{0%,100%{transform:translateY(0) rotate(-5deg)}50%{transform:translateY(-18px) rotate(7deg)}}
+@keyframes twinkle{0%,100%{opacity:.35;transform:scale(.8)}50%{opacity:1;transform:scale(1.2)}}
+.sparkle{position:absolute;color:#ffc84d;animation:twinkle 2s infinite}
+.card{background:#ffffffc9;border:1px solid #ffe0ec;border-radius:28px;padding:24px;box-shadow:0 15px 40px #b85b8720;backdrop-filter:blur(7px)}
+.center{text-align:center}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));gap:18px}
+.note{font-size:.93rem;color:#91647c}
+.photo{width:100%;height:300px;object-fit:cover;border-radius:19px;display:block;background:#ffe2ed}
+.photo-card{padding:10px;background:#fff;border-radius:23px;box-shadow:0 9px 25px #b85b8718;transform:rotate(var(--tilt,0deg))}
+.photo-card figcaption{text-align:center;padding:10px 5px 4px;font-weight:800}
+.section-kicker{font-weight:900;text-transform:uppercase;letter-spacing:.15em;font-size:.75rem;color:#9b6bd4;margin-bottom:12px}
+.big-emoji{font-size:3.1rem}
+.love-question{font-size:clamp(1.5rem,4vw,2.4rem);font-weight:900}
+#noArea{position:relative;min-height:95px;display:flex;align-items:center;justify-content:center;gap:12px;flex-wrap:wrap}
+#noBtn{background:#a9a0b3;box-shadow:none;position:relative;transition:left .12s,top .12s}
+.yes-message{display:none;margin:22px auto 0;max-width:650px;padding:20px;border-radius:22px;background:#fff0f6;border:1px dashed #ff8bb8}
+.yes-message.show{display:block;animation:pop .5s ease}
+@keyframes pop{from{transform:scale(.8);opacity:0}to{transform:scale(1);opacity:1}}
+.memory-upload{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin:18px 0}
+input[type=file]{max-width:100%;padding:10px;background:white;border:1px dashed #efa2c2;border-radius:14px}
+.uploaded-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:14px;margin-top:20px}
+.uploaded-grid img,.uploaded-grid video{width:100%;height:220px;object-fit:cover;border-radius:17px;background:#ffe6f0}
+.movie{padding:20px;border-radius:22px;background:linear-gradient(145deg,#fff,#fff0f6);border:1px solid #ffdae8}
+.movie .poster{font-size:3rem}
+footer{text-align:center;padding:40px 15px 65px;color:#9b6b84}
+.music-toggle{position:fixed;right:14px;bottom:14px;z-index:1000;background:#fff;color:#c83e78;border:1px solid #ffd1e3}
+#petals{position:fixed;inset:0;pointer-events:none;overflow:hidden;z-index:0}
+.petal{position:absolute;top:-40px;animation:fall linear forwards;opacity:.75}
+@keyframes fall{to{transform:translateY(110vh) rotate(600deg);opacity:0}}
+hr{border:0;border-top:1px dashed #f2b5d0;margin:26px 0}
+@media(max-width:600px){section{padding:52px 15px}.card{padding:19px}.photo{height:260px}body{cursor:auto}a,button,input,label,textarea{cursor:pointer}#heartCursor{display:none!important}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+<div id="heartCursor">❤️</div><div id="petals"></div>
+<button class="music-toggle" id="musicBtn" type="button" aria-pressed="false">♫ Play our little tune</button>
+<header class="hero" id="top">
+  <span class="floaty" style="top:10%;left:7%;font-size:3.3rem">🐼</span>
+  <span class="floaty" style="top:20%;right:8%;font-size:3rem;animation-delay:-2s">🧸</span>
+  <span class="floaty" style="bottom:15%;left:12%;font-size:2.7rem;animation-delay:-1s">🌹</span>
+  <span class="floaty" style="bottom:12%;right:12%;font-size:3rem;animation-delay:-3s">💖</span>
+  <span class="sparkle" style="top:20%;left:28%">✦</span><span class="sparkle" style="top:65%;right:25%;animation-delay:.7s">✧</span>
+  <div class="hero-inner">
+    <div class="eyebrow">A tiny universe made just for you</div>
+    <div class="pill">🎂 19 October 2026 · Navya's birthday</div>
+    <h1>Happy Birthday,<br>Navya! <span style="white-space:nowrap">♡</span></h1>
+    <p class="subtitle">To my favourite smile, my cutest chaos, and the person who makes ordinary days feel like a little bit of magic. This tiny website is a hug you can keep. 🫶</p>
+    <div class="hero-buttons"><a class="btn" href="#letter">Open your love letter 💌</a><a class="btn soft-btn" href="#memories">Our little memories 📸</a></div>
+    <p class="note">Made with a silly amount of love, pandas, sparkles & zero budget.</p>
+  </div>
+</header>
+
+<section id="letter">
+ <div class="card center">
+  <div class="big-emoji">💌🌹</div><div class="section-kicker">A letter for my girl</div>
+  <h2>Dear Navya,</h2>
+  <p style="max-width:760px;margin:0 auto">Happy birthday, meri pyaari Navya. ❤️ I hope this year gives you a hundred reasons to smile, the courage to chase every dream, soft days when you need rest, and big adventures when you feel brave. Thank you for being you—for the laughs, the little moments, and the memories we’re still going to make.</p>
+  <p style="max-width:760px;margin:14px auto 0">If I could gift you one thing, it would be the chance to see yourself through my eyes: someone precious, beautiful, funny, strong, and so very loved. May I keep cheering for you, annoying you a little, and holding your hand through all the chapters ahead.</p>
+  <p style="font-size:1.2rem;font-weight:900;color:#d84280">You are my favourite person. Today and all the days after. ♾️</p>
+  <p>Forever your biggest fan,<br><strong>Your person 💗</strong></p>
+ </div>
+</section>
+
+<section id="memories">
+ <div class="center"><div class="section-kicker">Little snapshots, giant feelings</div><h2>Our memory garden 📷</h2><p class="note">A few favourite moments to start with. Add as many photos as you like below—your new photos appear right here on this device.</p></div>
+ <div class="grid" id="starterPhotos">
+  <figure class="photo-card" style="--tilt:-1deg"><img class="photo" src="assets/garba-neon.webp" alt="Navya and her partner at a colourful garba night"><figcaption>Neon nights & dandiya lights ✨</figcaption></figure>
+  <figure class="photo-card" style="--tilt:1deg"><img class="photo" src="assets/golden-dupatta.jpg" alt="A playful photo together with a golden dupatta"><figcaption>One dupatta, two cuties 💛</figcaption></figure>
+  <figure class="photo-card" style="--tilt:-.5deg"><img class="photo" src="assets/together.jpg" alt="Smiling together at an outdoor celebration"><figcaption>My favourite place is beside you 🫶</figcaption></figure>
+ </div>
+ <div class="card center" style="margin-top:25px">
+  <h3>📸 Add more of our memories</h3><p class="note">Choose multiple pictures from your phone or laptop. Nothing is uploaded to a server; these are displayed locally in this open page.</p>
+  <div class="memory-upload"><input id="photoUpload" type="file" accept="image/*" multiple aria-label="Choose more photos"><button id="clearPhotos" class="soft-btn" type="button">Clear added photos</button></div>
+  <div class="uploaded-grid" id="extraPhotos"></div>
+ </div>
+</section>
+
+<section id="question">
+ <div class="card center">
+  <div class="big-emoji">🐼💕🧸</div><div class="section-kicker">Extremely important research</div>
+  <div class="love-question">Navya, do you love me? 🥹</div>
+  <p class="note">Please answer carefully. A very tiny panda is watching. 🐼</p>
+  <div id="noArea"><button id="yesBtn" type="button">YES, obviously! 💖</button><button id="noBtn" type="button" aria-label="No, a playful button">No 🙈</button></div>
+  <div class="yes-message" id="yesMessage"><div class="big-emoji">🥹💞🐼</div><h3>HEHE, I KNEW IT!!</h3><p>Official certificate: Navya's hugs are my favourite place in the universe. Redeem for unlimited cuddles, silly dates, and one very happy boyfriend. 💋🌹</p></div>
+ </div>
+</section>
+
+<section id="movie-night">
+ <div class="center"><div class="section-kicker">Blanket + snacks + you</div><h2>Our cute little movie night 🍿</h2><p class="note">Pick a mood for a future date night. These are ideas, not embedded or paid streams.</p></div>
+ <div class="grid">
+  <div class="movie"><div class="poster">💞🎬</div><h3>For butterflies</h3><p><strong>La La Land</strong> — music, dreams, and feelings to talk about after.</p><span class="pill">Romance · Musical</span></div>
+  <div class="movie"><div class="poster">🧸🍿</div><h3>For cosy giggles</h3><p><strong>Paddington 2</strong> — wholesome, warm, and basically a hug in movie form.</p><span class="pill">Feel-good · Comedy</span></div>
+  <div class="movie"><div class="poster">🌌✨</div><h3>For dreamy nights</h3><p><strong>Your Name</strong> — beautiful animation, fate, and a story that stays with you.</p><span class="pill">Anime · Fantasy</span></div>
+ </div>
+ <p class="note center">Watch through a service you already have or a legal free option in your region. No paid links are built into this site.</p>
+</section>
+
+<section id="art">
+ <div class="center"><div class="section-kicker">A little gallery of imagination</div><h2>Made of soft things ☁️</h2><p class="note">Tiny doodle-gallery vibes: cute, sparkly, and a little bit ridiculous—just like my love for you.</p></div>
+ <div class="grid">
+  <div class="card center"><div style="font-size:5rem;filter:drop-shadow(0 8px 10px #ff8bb866)">🐼</div><h3>Panda promise</h3><p>I will share my snacks. Most of the time. Maybe. 💗</p></div>
+  <div class="card center"><div style="font-size:5rem;filter:drop-shadow(0 8px 10px #ff8bb866)">🧸</div><h3>Emergency teddy</h3><p>For every day you need a squeeze, a smile, or both.</p></div>
+  <div class="card center"><div style="font-size:5rem;filter:drop-shadow(0 8px 10px #ff8bb866)">🌹</div><h3>Rose-tinted world</h3><p>Somehow even the simplest moments glow with you around.</p></div>
+  <div class="card center"><div style="font-size:5rem;filter:drop-shadow(0 8px 10px #ff8bb866)">💫</div><h3>Wish upon us</h3><p>More adventures, more photos, more stories that are ours.</p></div>
+ </div>
+</section>
+
+<section id="videos">
+ <div class="center"><div class="section-kicker">Press play on the memories</div><h2>Our video corner 🎞️</h2><p class="note">Add videos from your device. They play in this page and aren't uploaded anywhere.</p></div>
+ <div class="card center"><div class="memory-upload"><input id="videoUpload" type="file" accept="video/*" multiple aria-label="Choose videos"><button id="clearVideos" class="soft-btn" type="button">Clear added videos</button></div><div class="uploaded-grid" id="extraVideos"></div></div>
+</section>
+
+<section id="wish">
+ <div class="card center" style="background:linear-gradient(140deg,#fff,#ffeaf3)">
+  <div class="big-emoji">🎂🎁💖</div><h2>One last birthday wish…</h2>
+  <p style="max-width:680px;margin:0 auto 20px">May your new year be softer on your heart, brighter than fairy lights, full of people who show up for you, and overflowing with reasons to be proud of yourself. I hope this little corner of the internet makes you smile whenever you visit it.</p>
+  <a class="btn" href="#top">Back to the top, birthday girl ↑</a>
+ </div>
+</section>
+<footer>Built for Navya with 💗, 🐼, 🧸, 🌹 and an unreasonable number of sparkles.<br><span class="note">19.10.2026 · A tiny page, a big feeling.</span></footer>
+
+<script>
+(() => {
+ const cursor=document.getElementById('heartCursor');
+ if (window.matchMedia('(pointer:fine)').matches) {
+   cursor.style.display='block';
+   window.addEventListener('mousemove',e=>{cursor.style.left=e.clientX+'px';cursor.style.top=e.clientY+'px';});
+ }
+ // A small, original melody synthesized in-browser; no downloaded song or paid service.
+ let audioCtx=null, playing=false, timer=null, noteIndex=0, master=null;
+ const notes=[523.25,659.25,783.99,659.25,587.33,698.46,880,698.46,523.25,587.33,659.25,523.25];
+ const musicBtn=document.getElementById('musicBtn');
+ function playNote(){
+   if(!playing||!audioCtx)return;
+   const now=audioCtx.currentTime, osc=audioCtx.createOscillator(), gain=audioCtx.createGain();
+   osc.type='sine';osc.frequency.value=notes[noteIndex%notes.length];
+   gain.gain.setValueAtTime(0.0001,now);gain.gain.exponentialRampToValueAtTime(.055,now+.03);gain.gain.exponentialRampToValueAtTime(.0001,now+.42);
+   osc.connect(gain);gain.connect(master);osc.start(now);osc.stop(now+.45);
+   noteIndex++;timer=setTimeout(playNote,420);
+ }
+ musicBtn.addEventListener('click',async()=>{
+   if(!audioCtx){audioCtx=new (window.AudioContext||window.webkitAudioContext)();master=audioCtx.createGain();master.gain.value=.35;master.connect(audioCtx.destination);}
+   if(audioCtx.state==='suspended')await audioCtx.resume();
+   playing=!playing;musicBtn.setAttribute('aria-pressed',String(playing));
+   musicBtn.textContent=playing?'♫ Pause our little tune':'♫ Play our little tune';
+   if(playing)playNote();else clearTimeout(timer);
+ });
+ // The playful "No" button moves only within its own on-screen area.
+ const noBtn=document.getElementById('noBtn'), area=document.getElementById('noArea');
+ function dodge(){
+   const ar=area.getBoundingClientRect(), br=noBtn.getBoundingClientRect();
+   const maxX=Math.max(0,ar.width-br.width), maxY=Math.max(0,Math.min(60,window.innerHeight-br.height-ar.top));
+   noBtn.style.position='absolute';
+   noBtn.style.left=(Math.random()*maxX)+'px';
+   noBtn.style.top=(Math.random()*maxY)+'px';
+ }
+ noBtn.addEventListener('mouseenter',dodge);
+ noBtn.addEventListener('focus',dodge);
+ noBtn.addEventListener('click',e=>{e.preventDefault();dodge();});
+ noBtn.addEventListener('touchstart',e=>{e.preventDefault();dodge();},{passive:false});
+ document.getElementById('yesBtn').addEventListener('click',()=>{
+   document.getElementById('yesMessage').classList.add('show');
+   for(let i=0;i<20;i++)setTimeout(makePetal,i*70);
+ });
+ // Local preview of additional photos/videos.
+ const objectUrls=[];
+ function addFiles(inputId,containerId,type){
+   const input=document.getElementById(inputId), container=document.getElementById(containerId);
+   input.addEventListener('change',()=>{
+     [...input.files].forEach(file=>{
+       const url=URL.createObjectURL(file);objectUrls.push(url);
+       const el=document.createElement(type==='image'?'img':'video');
+       el.src=url;el.controls=type==='video';el.alt=type==='image'?file.name:'';
+       if(type==='video')el.playsInline=true;
+       el.title=file.name;container.appendChild(el);
+     });
+     input.value='';
+   });
+ }
+ addFiles('photoUpload','extraPhotos','image');addFiles('videoUpload','extraVideos','video');
+ function clearMedia(containerId){
+   const el=document.getElementById(containerId);
+   [...el.querySelectorAll('img,video')].forEach(node=>{if(node.src.startsWith('blob:'))URL.revokeObjectURL(node.src);});
+   el.replaceChildren();
+ }
+ document.getElementById('clearPhotos').addEventListener('click',()=>clearMedia('extraPhotos'));
+ document.getElementById('clearVideos').addEventListener('click',()=>clearMedia('extraVideos'));
+ function makePetal(){
+   const p=document.createElement('span');p.className='petal';p.textContent=['💗','🌸','✨','💕','🌹'][Math.floor(Math.random()*5)];
+   p.style.left=Math.random()*100+'vw';p.style.animationDuration=(4+Math.random()*4)+'s';p.style.fontSize=(14+Math.random()*20)+'px';
+   document.getElementById('petals').appendChild(p);setTimeout(()=>p.remove(),8500);
+ }
+ setInterval(()=>{if(Math.random()>.35)makePetal()},1100);
+})();
+</script>
+</body></html>
